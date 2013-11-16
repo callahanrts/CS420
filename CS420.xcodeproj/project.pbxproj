@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2867C518380BEE00D79B1D /* glyphicons_026_road.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F2867C418380BEE00D79B1D /* glyphicons_026_road.png */; };
+		1F2867C718380C7F00D79B1D /* glyphicons_003_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F2867C618380C7F00D79B1D /* glyphicons_003_user.png */; };
+		1F2867C9183810A900D79B1D /* glyphicons_074_cup.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F2867C8183810A900D79B1D /* glyphicons_074_cup.png */; };
+		1F2867CB1838123300D79B1D /* glyphicons_043_group.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F2867CA1838123300D79B1D /* glyphicons_043_group.png */; };
+		1F2867CD1838168700D79B1D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2867CC1838168700D79B1D /* FacebookSDK.framework */; };
 		1F4A3E8718232F37002703EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4A3E8618232F37002703EC /* Foundation.framework */; };
 		1F4A3E8918232F37002703EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4A3E8818232F37002703EC /* CoreGraphics.framework */; };
 		1F4A3E8B18232F37002703EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4A3E8A18232F37002703EC /* UIKit.framework */; };
@@ -49,6 +54,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F2867C418380BEE00D79B1D /* glyphicons_026_road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_026_road.png; sourceTree = "<group>"; };
+		1F2867C618380C7F00D79B1D /* glyphicons_003_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_003_user.png; sourceTree = "<group>"; };
+		1F2867C8183810A900D79B1D /* glyphicons_074_cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_074_cup.png; sourceTree = "<group>"; };
+		1F2867CA1838123300D79B1D /* glyphicons_043_group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_043_group.png; sourceTree = "<group>"; };
+		1F2867CC1838168700D79B1D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		1F4A3E8318232F37002703EC /* CS420.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CS420.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4A3E8618232F37002703EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F4A3E8818232F37002703EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -98,6 +108,7 @@
 				1F4A3EDC1823311A002703EC /* QuartzCore.framework in Frameworks */,
 				1F4A3EDD1823311A002703EC /* SystemConfiguration.framework in Frameworks */,
 				1F4A3ECC182330C0002703EC /* CoreData.framework in Frameworks */,
+				1F2867CD1838168700D79B1D /* FacebookSDK.framework in Frameworks */,
 				1F4A3ECD182330C0002703EC /* CoreLocation.framework in Frameworks */,
 				1F4A3ECE182330C0002703EC /* CoreText.framework in Frameworks */,
 				1F4A3ECF182330C0002703EC /* GLKit.framework in Frameworks */,
@@ -122,6 +133,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F2867C318380BDB00D79B1D /* Glyphicons */ = {
+			isa = PBXGroup;
+			children = (
+				1F2867CA1838123300D79B1D /* glyphicons_043_group.png */,
+				1F2867C8183810A900D79B1D /* glyphicons_074_cup.png */,
+				1F2867C618380C7F00D79B1D /* glyphicons_003_user.png */,
+				1F2867C418380BEE00D79B1D /* glyphicons_026_road.png */,
+			);
+			name = Glyphicons;
+			sourceTree = "<group>";
+		};
 		1F4A3E7A18232F37002703EC = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +166,7 @@
 		1F4A3E8518232F37002703EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F2867CC1838168700D79B1D /* FacebookSDK.framework */,
 				1F4A3ED01823311A002703EC /* ImageIO.framework */,
 				1F4A3ED11823311A002703EC /* libc++.dylib */,
 				1F4A3ED21823311A002703EC /* libicucore.dylib */,
@@ -184,6 +207,7 @@
 		1F4A3E8D18232F37002703EC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F2867C318380BDB00D79B1D /* Glyphicons */,
 				1F4A3E8E18232F37002703EC /* CS420-Info.plist */,
 				1F4A3E8F18232F37002703EC /* InfoPlist.strings */,
 				1F4A3E9218232F37002703EC /* main.m */,
@@ -286,8 +310,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2867C718380C7F00D79B1D /* glyphicons_003_user.png in Resources */,
 				1F4A3E9D18232F37002703EC /* Main_iPad.storyboard in Resources */,
+				1F2867C9183810A900D79B1D /* glyphicons_074_cup.png in Resources */,
 				1F4A3EA218232F37002703EC /* Images.xcassets in Resources */,
+				1F2867C518380BEE00D79B1D /* glyphicons_026_road.png in Resources */,
+				1F2867CB1838123300D79B1D /* glyphicons_043_group.png in Resources */,
 				1F4A3E9A18232F37002703EC /* Main_iPhone.storyboard in Resources */,
 				1F4A3E9118232F37002703EC /* InfoPlist.strings in Resources */,
 				1F4A3EC518233042002703EC /* GoogleMaps.bundle in Resources */,
