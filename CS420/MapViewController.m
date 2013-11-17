@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Cody Callahan. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface ViewController ()
+@interface MapViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MapViewController
 
 - (void)viewDidLoad
 {
