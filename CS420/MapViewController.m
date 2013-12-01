@@ -7,28 +7,55 @@
 //
 
 #import "MapViewController.h"
-#import <GoogleMaps/GoogleMaps.h>
 
 @interface MapViewController ()
 
 @end
 
 @implementation MapViewController
+@synthesize locationManager;
+@synthesize path;
+@synthesize mapView;
+@synthesize camera;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.868
-                                                            longitude:151.2086
-                                                                 zoom:6];
-    GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = camera.target;
-    marker.snippet = @"Hello World";
-    //marker.animated = YES;
+    // Set up location managing for logging latitude and longitude
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
+    
+    // Set up Google maps
+    camera = [GMSCameraPosition cameraWithLatitude:37
+                                         longitude:-122
+                                              zoom:1];
+    mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+
+    path = [GMSMutablePath path];
     
     self.view = mapView;
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *loc = [locations lastObject];
+    [path addLatitude:loc.coordinate.latitude longitude:loc.coordinate.longitude];
+    GMSPolyline *polyline = [GMSPolyline polylineWithPath:path];
+    polyline.strokeColor = [UIColor blueColor];
+    polyline.strokeWidth = 10.f;
+    polyline.map = mapView;
+
+    [mapView animateToLocation:CLLocationCoordinate2DMake(loc.coordinate.latitude, loc.coordinate.longitude)];
+    [mapView animateToZoom:18];
+//    CLLocationCoordinate2D target = CLLocationCoordinate2DMake(loc.coordinate.latitude, loc.coordinate.longitude);
+//    mapView.camera = [GMSCameraPosition cameraWithTarget:target zoom:18];
+    
+    NSLog(@"%f, %f", loc.coordinate.latitude, loc.coordinate.longitude);
+    
 }
 
 - (void)didReceiveMemoryWarning

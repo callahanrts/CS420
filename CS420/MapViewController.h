@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <CLLocationManagerDelegate>
+
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) GMSMutablePath *path;
+@property (nonatomic, retain) GMSCameraPosition *camera;
+@property (nonatomic, retain) GMSMapView *mapView;
 
 @end
