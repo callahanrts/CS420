@@ -9,4 +9,13 @@
 #import <UIKit/UIKit.h>
 @interface RideViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *clockLabel;
+@property (weak, nonatomic) IBOutlet UILabel *speedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (nonatomic, retain) NSTimer *_timer;
+@property (nonatomic, retain) NSDate *startDate;
+
+- (IBAction)startClock:(id)sender;
+- (IBAction)stopClock:(id)sender;
+
 @end

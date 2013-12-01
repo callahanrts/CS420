@@ -51,7 +51,7 @@
             <objects>
                 <tabBarController definesPresentationContext="YES" id="5O6-vx-HCe" customClass="TabBarController" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Hhd-yQ-cOV">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -124,9 +124,22 @@
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" title="Start Ride" id="xx9-9c-qMv">
-                        <barButtonItem key="leftBarButtonItem" title="Stop" id="CSw-46-QAX"/>
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="eUy-bh-4Yx"/>
+                        <barButtonItem key="leftBarButtonItem" title="Stop" id="CSw-46-QAX">
+                            <connections>
+                                <action selector="stopClock:" destination="GOj-hd-i1J" id="kiL-fi-jQj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="7SM-Za-TMo">
+                            <connections>
+                                <action selector="startClock:" destination="GOj-hd-i1J" id="BwT-Ku-1jz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="clockLabel" destination="FIL-FF-2fT" id="JE3-aW-UcN"/>
+                        <outlet property="distanceLabel" destination="ch3-sB-0tD" id="DYM-4O-NVQ"/>
+                        <outlet property="speedLabel" destination="B8i-Wo-q1H" id="Ajj-HF-THB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZK-Ph-Cyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

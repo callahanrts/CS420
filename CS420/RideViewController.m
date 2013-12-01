@@ -13,6 +13,11 @@
 @end
 
 @implementation RideViewController
+@synthesize _timer;
+@synthesize startDate;
+@synthesize clockLabel;
+@synthesize speedLabel;
+@synthesize distanceLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +43,38 @@
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
+}
+
+- (IBAction)startClock:(id)sender {
+    if (_timer == nil)
+    {
+        startDate = [NSDate date];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                                  target:self
+                                                selector:@selector(_timerFired)
+                                                userInfo:nil
+                                                 repeats:YES];
+    }
+}
+
+- (IBAction)stopClock:(id)sender {
+    if (_timer != nil)
+    {
+        [_timer invalidate];
+        _timer = nil;
+    }
+}
+
+- (void)_timerFired
+{
+    NSDate *currentDate = [NSDate date];
+    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:startDate];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm:ss"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    NSString *timeString=[dateFormatter stringFromDate:timerDate];
+    clockLabel.text = timeString;
 }
 
 @end
