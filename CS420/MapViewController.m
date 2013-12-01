@@ -32,7 +32,7 @@
     // Set up Google maps
     camera = [GMSCameraPosition cameraWithLatitude:37
                                          longitude:-122
-                                              zoom:1];
+                                              zoom:17];
     mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
 
     path = [GMSMutablePath path];
@@ -50,10 +50,7 @@
     polyline.map = mapView;
 
     [mapView animateToLocation:CLLocationCoordinate2DMake(loc.coordinate.latitude, loc.coordinate.longitude)];
-    [mapView animateToZoom:18];
-//    CLLocationCoordinate2D target = CLLocationCoordinate2DMake(loc.coordinate.latitude, loc.coordinate.longitude);
-//    mapView.camera = [GMSCameraPosition cameraWithTarget:target zoom:18];
-    
+
     NSLog(@"%f, %f", loc.coordinate.latitude, loc.coordinate.longitude);
     
 }
