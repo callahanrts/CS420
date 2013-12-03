@@ -17,4 +17,7 @@
 @property (nonatomic, retain) GMSCameraPosition *camera;
 @property (nonatomic, retain) GMSMapView *mapView;
 
+-(void)startLocation;
+-(void)stopLocation;
+
 @end

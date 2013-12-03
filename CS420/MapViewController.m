@@ -27,7 +27,6 @@
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [locationManager startUpdatingLocation];
     
     // Set up Google maps
     camera = [GMSCameraPosition cameraWithLatitude:37
@@ -53,6 +52,14 @@
 
     NSLog(@"%f, %f", loc.coordinate.latitude, loc.coordinate.longitude);
     
+}
+
+-(void)startLocation{
+    [locationManager startUpdatingLocation];
+}
+
+-(void)stopLocation{
+    [locationManager stopUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning

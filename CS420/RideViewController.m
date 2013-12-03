@@ -18,6 +18,7 @@
 @synthesize clockLabel;
 @synthesize speedLabel;
 @synthesize distanceLabel;
+@synthesize map;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +33,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    map = self.tabBarController.viewControllers[3];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +56,7 @@
                                                 selector:@selector(_timerFired)
                                                 userInfo:nil
                                                  repeats:YES];
+        [map startLocation];
     }
 }
 
@@ -62,6 +65,7 @@
     {
         [_timer invalidate];
         _timer = nil;
+        [map stopLocation];
     }
 }
 
